@@ -39,7 +39,7 @@ namespace Factory.Controllers
     }
 
       [HttpPost]
-    public ActionResult Edit(Engineer Engineer)
+    public ActionResult Edit(Engineer engineer)
     {
       _db.Entry(engineer).State = EntityState.Modified;
       _db.SaveChanges();
