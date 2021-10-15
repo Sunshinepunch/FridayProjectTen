@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Course
+@model Factory.Models.Engineer
 
-<h4>Add a new Course</h4>
+<h4>Add an engineer</h4>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
