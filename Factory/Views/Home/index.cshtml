@@ -1,9 +1,34 @@
+@using Factory.Models
 @{
   Layout = "_Layout";
 }
 
 <h1>Dr Sillystringz Factorium Emporium With a Moratorium on Troublesome Questions</h1>
+<br>
 
+<h4><b>Engineer List</b></h4>
 
-<p>@Html.ActionLink("See machines", "Index", "Machines")</p> 
-<p>@Html.ActionLink("See engineers", "Index", "Engineers")</p>
+<table>
+    @foreach (Engineer engineer in ViewBag.Engineers)
+    {
+        <tr>
+            <td>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</td>
+        </tr>
+    }
+</table>
+<br>
+<br>
+<h4><b>Machine List</b></h4>
+
+<table>
+    @foreach (Machine machine in ViewBag.Machines)
+    {
+        <tr>
+            <td>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId })</td>
+        </tr>
+    }
+</table>
+<br>
+<br>
+<p>@Html.ActionLink("See just machines", "Index", "Machines")</p> 
+<p>@Html.ActionLink("See just engineers", "Index", "Engineers")</p>
